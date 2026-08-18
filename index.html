@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#020719">
+<meta name="description" content="Dlicom Guide — explore Dlicom, its ecosystem, community roles and official resources.">
+<title>Dlicom Guide</title>
+<style>
+:root{
+ --bg:#020617;--bg2:#030b1c;--panel:#07152a;--panel2:#091d35;
+ --blue:#2563ff;--cyan:#08cfff;--deep:#071447;--text:#f4f8ff;
+ --muted:#91a7bf;--line:#24456e;--soft:#102946;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:
+ radial-gradient(circle at 75% 8%,#092b6c45,transparent 28%),
+ radial-gradient(circle at 15% 45%,#005cff20,transparent 28%),
+ linear-gradient(180deg,#010512 0%,#020719 45%,#010510 100%);
+ color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit}button{font:inherit}
+.wrap{width:min(1120px,calc(100% - 28px));margin:auto}
+.topbar{height:72px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:800;letter-spacing:.22em;font-size:14px}
+.brand img{width:34px;height:34px;object-fit:contain}
+.nav{display:flex;gap:24px;color:#91a7bf;font-size:12px}.nav a{text-decoration:none}.nav a:hover{color:#fff}
+
+.hero{min-height:610px;border:1px solid #2a5cff38;border-radius:30px;overflow:hidden;position:relative;
+ background:linear-gradient(120deg,#030a1b 0%,#06132b 58%,#020817 100%);
+ box-shadow:0 35px 90px #000b;margin-bottom:18px}
+.hero:before{content:"";position:absolute;inset:0;background:
+ radial-gradient(circle at 82% 52%,#007eff28,transparent 24%),
+ linear-gradient(90deg,transparent 48%,#051d44 100%);pointer-events:none}
+.grid{position:absolute;inset:0;opacity:.22;background-image:
+ linear-gradient(#2e75ff12 1px,transparent 1px),linear-gradient(90deg,#2e75ff12 1px,transparent 1px);
+ background-size:44px 44px}
+.heroCopy{position:relative;z-index:3;width:58%;padding:78px 50px 55px}
+.kicker{color:#59e7ff;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+h1{font-size:clamp(44px,6.3vw,76px);line-height:.97;letter-spacing:-.055em;margin:18px 0}
+h1 span{color:#49ddff}
+.lead{font-size:16px;line-height:1.72;color:#a7bad0;max-width:610px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 17px}
+.btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:13px 17px;border-radius:13px;font-size:13px;font-weight:750}
+.primary{background:linear-gradient(135deg,#58e7ff,#1d67ff);color:#03101d;box-shadow:0 12px 35px #147cff35}
+.secondary{border:1px solid #5edfff36;background:#09203a;color:#e9fbff}
+.btn:hover{transform:translateY(-2px)}
+.stores{display:flex;gap:9px;flex-wrap:wrap}.store{display:flex;align-items:center;gap:10px;text-decoration:none;border:1px solid #5edfff20;background:#06172ab8;border-radius:12px;padding:9px 12px;min-width:155px}
+.store small{display:block;color:#6f879c;font-size:7px;letter-spacing:.12em}.store b{display:block;font-size:12px;margin-top:2px}.store i{font-style:normal;color:#64e7ff;font-size:16px}
+
+.heroLogo{position:absolute;right:5%;top:13%;width:min(43%,440px);z-index:2;filter:drop-shadow(0 0 55px #006dff44)}
+.heroLogo img{width:100%;display:block}
+.mascotHero{position:absolute;right:-5%;bottom:-16%;width:50%;z-index:2;opacity:.88;filter:drop-shadow(0 22px 55px #000)}
+.mascotHero img{width:100%;display:block}
+
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:22px}
+.quick .q{padding:17px;border:1px solid #2b5fff22;background:#061226d9;border-radius:17px}
+.q b{font-size:13px}.q span{display:block;color:#718ba5;font-size:11px;margin-top:4px}
+
+.section{margin:26px 0}.sectionTitle{font-size:12px;color:#59e7ff;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin:0 0 10px}
+.card{border:1px solid #2a5fff25;background:linear-gradient(145deg,#061329e8,#030a18e8);border-radius:22px;overflow:hidden;box-shadow:0 18px 50px #0005}
+.acc{border-bottom:1px solid #214064}.acc:last-child{border-bottom:0}
+.acc button{width:100%;min-height:72px;padding:0 20px;background:transparent;border:0;color:#f2f8ff;display:flex;align-items:center;gap:13px;text-align:left;cursor:pointer}
+.icon{width:38px;height:38px;border-radius:11px;background:#09284a;border:1px solid #2f7dff40;color:#58e7ff;display:grid;place-items:center;flex:none}
+.title{font-weight:700;font-size:14px;flex:1}.arrow{color:#6e89a5;transition:.2s}.open .arrow{transform:rotate(180deg);color:#5de8ff}
+.panel{max-height:0;overflow:hidden;transition:max-height .35s ease}.inside{padding:0 72px 24px;color:#9eb3c7;font-size:13px;line-height:1.75}.inside p{margin:0 0 12px}
+.inside h3{margin:8px 0 10px;color:#eaf7ff;font-size:15px}.inside strong{color:#dff8ff}.note{border:1px solid #2c7cff28;background:#06203a;padding:12px 14px;border-radius:13px;color:#ccecf8}
+.linkbtn{display:inline-block;margin-top:4px;padding:10px 13px;border-radius:10px;background:#0a3154;border:1px solid #3bcfff2c;text-decoration:none;color:#dffaff;font-weight:650;font-size:12px}
+.roleArt{width:100%;display:block;max-height:480px;object-fit:cover;object-position:center;background:#000}
+.roleGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;padding:18px}
+.role{padding:16px;border:1px solid #315fff26;background:#071a31;border-radius:15px}.role b{display:block;font-size:13px;color:#fff}.role small{display:block;color:#718ba4;line-height:1.55;margin-top:5px}
+.flow{display:flex;align-items:center;gap:8px;overflow:auto;padding:3px 0 5px;margin-top:13px}.flow span{white-space:nowrap;padding:9px 12px;border-radius:999px;background:#081e38;border:1px solid #3b7cff32;color:#d8f6ff;font-size:11px}.flow em{font-style:normal;color:#47dcff}
+.creator{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:22px;border-top:1px solid #214064;background:#040c1a}.creatorText b{display:block;font-size:14px}.creatorText span{display:block;color:#7f97ae;font-size:12px;margin-top:4px}
+.linksBanner{height:210px;object-fit:cover;width:100%;display:block}.linksGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;padding:18px}
+.linksGrid a{padding:13px;border-radius:13px;background:#071b31;border:1px solid #315fff1f;text-decoration:none;color:#c8e6f3;font-size:12px;display:flex;justify-content:space-between}
+.linksGrid a:hover{border-color:#4bdfff48;color:#fff}
+.mascotCard{display:grid;grid-template-columns:1fr 1fr;gap:0}.mascotCard img{width:100%;height:100%;min-height:360px;object-fit:cover}.mascotText{padding:32px}.mascotText h2{font-size:30px;margin:0 0 12px;letter-spacing:-.03em}.mascotText p{color:#94abc0;line-height:1.7;font-size:13px}
+.app{padding:25px;display:flex;align-items:center;justify-content:space-between;gap:20px}.app h2{margin:0;font-size:21px}.app p{color:#829bb1;font-size:12px}.appBtns{display:flex;gap:9px;flex-wrap:wrap}
+footer{display:flex;justify-content:space-between;padding:25px 2px 40px;color:#617c95;font-size:10px}
+
+@media(max-width:900px){
+ .heroCopy{width:70%}.heroLogo{width:38%;right:3%;top:16%}.mascotHero{width:54%;right:-12%}
+ .quick{grid-template-columns:1fr 1fr}.linksGrid{grid-template-columns:repeat(3,1fr)}.roleGrid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:700px){
+ .wrap{width:min(100% - 18px,1120px)}.topbar{height:62px}.nav{display:none}
+ .hero{min-height:760px;border-radius:24px}.heroCopy{width:100%;padding:42px 22px;position:relative;z-index:5}
+ h1{font-size:44px}.lead{font-size:14px}.heroLogo{width:70%;right:15%;top:auto;bottom:13%;opacity:.42}.mascotHero{width:88%;right:-22%;bottom:-2%;opacity:.6}
+ .quick{gap:8px}.quick .q{padding:14px}.inside{padding:0 52px 21px}
+ .linksGrid{grid-template-columns:1fr 1fr}.linksBanner{height:155px}.roleArt{max-height:300px}.mascotCard{grid-template-columns:1fr}.mascotCard img{min-height:270px;max-height:330px}.app{display:block}
+}
+@media(max-width:420px){
+ .actions a{width:100%;justify-content:center}.stores .store{flex:1;min-width:0}.roleGrid,.linksGrid{grid-template-columns:1fr}.hero{min-height:790px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="topbar">
+<a class="brand" href="#"><img src="assets/logo.webp" alt="Dlicom">DLICOM</a>
+<nav class="nav"><a href="#guide">Guide</a><a href="#roles">Roles</a><a href="#links">Official Links</a><a href="#app">App</a></nav>
+</header>
+
+<section class="hero">
+<div class="grid"></div>
+<div class="heroCopy">
+<div class="kicker">DLICOM ECOSYSTEM</div>
+<h1>Connecting social<br>experiences with <span>Web3.</span></h1>
+<p class="lead">Dlicom brings social interaction, secure communication, communities, digital assets and Web3 tools together in one connected ecosystem.</p>
+<div class="actions">
+<a class="btn primary" href="https://play.google.com/store/apps/details?id=com.shlenpower.dlicom" target="_blank">Download Dlicom ↗</a>
+<a class="btn secondary" href="https://whitepaper.dlicom.io/" target="_blank">Explore Whitepaper ↗</a>
+</div>
+<div class="stores">
+<a class="store" href="https://play.google.com/store/apps/details?id=com.shlenpower.dlicom" target="_blank"><i>▶</i><span><small>GET IT ON</small><b>Google Play</b></span></a>
+<a class="store" href="https://apps.apple.com/us/app/dlicom/id6502626332" target="_blank"><i></i><span><small>DOWNLOAD ON THE</small><b>App Store</b></span></a>
+</div>
+</div>
+<div class="heroLogo"><img src="assets/logo-glow.webp" alt="Dlicom"></div>
+<div class="mascotHero"><img src="assets/mascots.webp" alt="Dlicom mascots"></div>
+</section>
+
+<div class="quick">
+<div class="q"><b>Social</b><span>Connect & communicate</span></div>
+<div class="q"><b>Communities</b><span>Discover & participate</span></div>
+<div class="q"><b>Wallet</b><span>Self-custodial assets</span></div>
+<div class="q"><b>Web3 Tools</b><span>Explore on-chain experiences</span></div>
+</div>
+
+<section class="section" id="guide">
+<p class="sectionTitle">Explore Dlicom</p>
+<div class="card">
+
+<div class="acc open">
+<button onclick="toggle(this)"><span class="icon">◆</span><span class="title">What Is Dlicom?</span><span class="arrow">⌄</span></button>
+<div class="panel"><div class="inside">
+<p>Dlicom (DLI) is a Web3-native social and communication platform that brings social interaction, secure communication, communities, digital assets, and Web3 tools together in one connected ecosystem.</p>
+<p>Built on Base, Dlicom combines familiar social experiences with blockchain-powered functionality, including messaging, communities, a self-custodial wallet, an integrated Web3 browser, and on-chain transactions.</p>
+<p>At the center of the ecosystem is <strong>$DLI</strong>, Dlicom’s native utility token.</p>
+<p><strong>Dlicom — connecting social experiences with Web3.</strong></p>
+</div></div>
+</div>
+
+<div class="acc">
+<button onclick="toggle(this)"><span class="icon">◈</span><span class="title">Dlicom Wallet</span><span class="arrow">⌄</span></button>
+<div class="panel"><div class="inside">
+<p>Explore Dlicom's wallet experience and learn how self-custody works before moving assets or connecting to Web3 apps.</p>
+<div class="note">🔒 Never share your seed phrase or private key with anyone.</div>
+</div></div>
+</div>
+
+<div class="acc">
+<button onclick="toggle(this)"><span class="icon">◎</span><span class="title">Social & Community Links</span><span class="arrow">⌄</span></button>
+<div class="panel"><div class="inside">
+<p>Find Dlicom across its official social and community channels.</p>
+<a class="linkbtn" href="#links">View Official Links ↗</a>
+</div></div>
+</div>
+
+<div class="acc">
+<button onclick="toggle(this)"><span class="icon">🏆</span><span class="title">Community Roles</span><span class="arrow">⌄</span></button>
+<div class="panel"><div class="inside">
+<p>Community roles recognize different types of participation and contribution. Follow the latest official announcements for current requirements.</p>
+<div class="flow"><span>OG</span><em>→</em><span>Dliever</span><em>→</em><span>Decoded</span><em>→</em><span>DCO</span></div>
+</div></div>
+</div>
+
+<div class="acc">
+<button onclick="toggle(this)"><span class="icon">✦</span><span class="title">How To Contribute</span><span class="arrow">⌄</span></button>
+<div class="panel"><div class="inside">
+<p>Quality beats quantity. Helpful contributions can include original artwork, educational posts, guides, community support, feedback and thoughtful participation.</p>
+<ul>
+<li>Create useful, original content and arts.</li>
+<li>Help new members understand Dlicom.</li>
+<li>Participate consistently without spamming.</li>
+<li>Join daily event.</li>
+<li>Follow official announcements and community rules.</li>
+</ul>
+</div></div>
+</div>
+
+<div class="acc">
+<button onclick="toggle(this)"><span class="icon">▤</span><span class="title">Explore Dlicom</span><span class="arrow">⌄</span></button>
+<div class="panel"><div class="inside">
+<p>Use official documentation as the source of truth for product and ecosystem details.</p>
+<a class="linkbtn" href="https://whitepaper.dlicom.io/" target="_blank">Read the Whitepaper ↗</a>
+</div></div>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="roles">
+<p class="sectionTitle">Community Recognition</p>
+<div class="card">
+<img class="roleArt" src="assets/roles.webp" alt="Dlicom community roles">
+<div class="roleGrid">
+<div class="role"><b>OG</b><small>Early community members.</small></div>
+<div class="role"><b>Dliever</b><small>Consistent participation.</small></div>
+<div class="role"><b>Decoded</b><small>Recognized contribution.</small></div>
+<div class="role"><b>DCO</b><small>Creative & community contribution.</small></div>
+</div>
+<div class="creator">
+<div class="creatorText"><b>Brandkit for Creator</b><span>Use the official Dlicom brand direction for creator work.</span></div>
+<a class="btn secondary" href="https://www.figma.com/design/JLmiIppBpTUqUszsvyy5ur/Dlicom-branding?node-id=0-1&t=bRvELrC8fseIjb8I-1" target="_blank">Open Brand Kit ↗</a>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="card mascotCard">
+<img src="assets/mascots.webp" alt="Dlicom community artwork">
+<div class="mascotText">
+<div class="kicker">DLICOM COMMUNITY</div>
+<h2>Build, create & contribute.</h2>
+<p>From original art and educational posts to community support and daily participation, meaningful contributions help strengthen the Dlicom ecosystem.</p>
+<a class="btn primary" href="#guide">Explore The Guide ↓</a>
+</div>
+</div>
+</section>
+
+<section class="section" id="links">
+<div class="card">
+<img class="linksBanner" src="assets/official-links.webp" alt="Official links">
+<div class="linksGrid">
+<a href="https://x.com/DlicomApp" target="_blank">X ↗</a>
+<a href="https://t.me/dlicom" target="_blank">Telegram ↗</a>
+<a href="https://www.youtube.com/@DlicomApp" target="_blank">YouTube ↗</a>
+<a href="https://www.linkedin.com/company/shlenpower" target="_blank">LinkedIn ↗</a>
+<a href="https://www.tiktok.com/@dlicomapp" target="_blank">TikTok ↗</a>
+<a href="https://www.instagram.com/dlicomapp" target="_blank">Instagram ↗</a>
+<a href="https://www.reddit.com/user/DlicomApp/" target="_blank">Reddit ↗</a>
+<a href="https://www.facebook.com/DlicomApp" target="_blank">Facebook ↗</a>
+<a href="https://medium.com/@dlicom" target="_blank">Medium ↗</a>
+<a href="https://whitepaper.dlicom.io/" target="_blank">Whitepaper ↗</a>
+</div>
+</div>
+</section>
+
+<section class="section" id="app">
+<div class="card app">
+<div><h2>Get the Dlicom app</h2><p>Continue your Dlicom experience on mobile.</p></div>
+<div class="appBtns">
+<a class="btn primary" href="https://play.google.com/store/apps/details?id=com.shlenpower.dlicom" target="_blank">▶ Google Play</a>
+<a class="btn secondary" href="https://apps.apple.com/us/app/dlicom/id6502626332" target="_blank"> App Store</a>
+</div>
+</div>
+</section>
+</div>
+
+<footer class="wrap"><span>DLICOM GUIDE</span><span>Explore Dlicom • Official resources</span></footer>
+
+<script>
+function toggle(btn){
+ const acc=btn.parentElement, panel=acc.querySelector('.panel'), isOpen=acc.classList.contains('open');
+ document.querySelectorAll('.acc.open').forEach(x=>{
+   x.classList.remove('open');
+   x.querySelector('.panel').style.maxHeight=null;
+ });
+ if(!isOpen){
+   acc.classList.add('open');
+   panel.style.maxHeight=panel.scrollHeight+'px';
+ }
+}
+</script>
+</body>
+</html>
